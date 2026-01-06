@@ -16,6 +16,10 @@ This repository demonstrates the evolution of a **.NET 10 Ordering System** thro
 
 A single codebase deployed as a single unit.
 
+<p align="center">
+  <img src="assets/Monolith.jpg" alt="Monolith Architecture" width="800">
+</p>
+
 * **Pros:** Single versioning, easy deployment to client environments, consistent interface.
 * **Cons:** Scaling requires redeploying everything; technical debt grows as behaviors intertwine.
 * **Best Use-Case:** New projects where component boundaries aren't clear yet.
@@ -25,6 +29,10 @@ A single codebase deployed as a single unit.
 ## 2. Layered Architecture (The Lasagna)
 
 Organizes code into horizontal tiers based on technology or function (Data, Business, UI).
+
+<p align="center">
+  <img src="assets/Layered.jpg" alt="Layered Architecture" width="800">
+</p>
 
 * **Pros:** Clear delineation of responsibilities; easy to locate where new code goes.
 * **Cons:** Hard to scale individual features; changes often ripple through all layers.
@@ -36,6 +44,10 @@ Organizes code into horizontal tiers based on technology or function (Data, Busi
 
 A step toward microservices where pieces are split into components but still deployed together.
 
+<p align="center">
+  <img src="assets/Modular.jpg" alt="Modular Monolith" width="800">
+</p>
+
 * **Pros:** Loose coupling; easier component replacement compared to a standard monolith.
 * **Cons:** Inherits the worst of both worlds; requires redeploying everything and complex integration testing.
 * **Best Use-Case:** A transition state when moving from a monolith to microservices.
@@ -45,6 +57,10 @@ A step toward microservices where pieces are split into components but still dep
 ## 4. Pipeline Architecture (The Assembly Line)
 
 A linear process where data flows through a series of sequential components.
+
+<p align="center">
+  <img src="assets/Pipline.jpg" alt="Pipeline Architecture" width="800">
+</p>
 
 * **Pros:** Ideal for complex workflows like data ingestion, cleansing, and transformation.
 * **Cons:** Processing can be slower as each step waits for the previous one to complete.
@@ -56,6 +72,10 @@ A linear process where data flows through a series of sequential components.
 
 A minimal core system augmented by plug-in components for specific tasks.
 
+<p align="center">
+  <img src="assets/MicroKernal.jpg" alt="Micro-kernel Architecture" width="800">
+</p>
+
 * **Pros:** Core remains stable; plugins can grow organically and be deployed individually.
 * **Cons:** Hard to decide what belongs in the core vs. a plugin; can lead to code duplication.
 * **Best Use-Case:** Systems with diverse, quickly evolving functions (e.g., tax calculation for different regions).
@@ -65,6 +85,10 @@ A minimal core system augmented by plug-in components for specific tasks.
 ## 6. Event-Driven Architecture
 
 Asynchronous communication where components publish events to a service bus for others to consume.
+
+<p align="center">
+  <img src="assets/EventDriven.jpg" alt="Event Driven Architecture" width="800">
+</p>
 
 * **Pros:** Very loose coupling; components can process data at different speeds; high availability.
 * **Cons:** "Eventually consistent" state; difficult to reconstruct current state without replaying event history.
@@ -76,13 +100,17 @@ Asynchronous communication where components publish events to a service bus for 
 
 An organizational pattern focused on creating reusable "enterprise services" to avoid reinventing the wheel.
 
+<p align="center">
+  <img src="assets/SOA.jpg" alt="SOA Architecture" width="800">
+</p>
+
 * **Pros:** Operational efficiency; removes duplication of features like email distribution across a company.
 * **Cons:** Teams lose control over speed and quality; technological stagnation if common services don't evolve.
 * **Best Use-Case:** Large organizations with great inter-team communication and a shared-service mindset.
 
 ---
 
-## 🏁 Summary Comparison
+## 🏁 Summary Comparison & Evolution
 
 | Pattern | Deployment | Coupling | Scaling | Focus |
 | --- | --- | --- | --- | --- |
@@ -94,6 +122,12 @@ An organizational pattern focused on creating reusable "enterprise services" to 
 | **Event-Driven** | Distributed | Lowest | High | Asynchrony |
 | **SOA** | Distributed | Moderate | Enterprise-wide | Reusability |
 
+<br>
+
+<p align="center">
+  <img src="assets/FullPatterns.jpg" alt="Software Architecture Comparison" width="900">
+</p>
+
 ---
 
 ### How to Run
@@ -101,4 +135,3 @@ An organizational pattern focused on creating reusable "enterprise services" to 
 1. Clone the repository.
 2. Navigate to any folder (e.g., `01-Spaghetti-Monolith`).
 3. Run `dotnet run` inside the project folder.
-
